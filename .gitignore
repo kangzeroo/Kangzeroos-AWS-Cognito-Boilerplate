@@ -1,0 +1,11 @@
+Boilerplate_Frontend/App/node_modules
+Boilerplate_Frontend/App/bundle.js
+Boilerplate_Frontend/App/npm-debug.log
+Boilerplate_Frontend/.DS_Store
+Boilerplate_Backend/App/node_modules
+Boilerplate_Frontend/.DS_Store
+.DS_Store
+
+# IntelliJ
+*.iml
+/.idea

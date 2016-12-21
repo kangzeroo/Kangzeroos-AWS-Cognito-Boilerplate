@@ -1,0 +1,32 @@
+{
+  "name": "RBW_Landlord_Microservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "forever": "forever start --uid 'landlord_ms' index.js -- --host:0.0.0.0"
+  },
+  "engines": {
+    "node": "6.9.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.6.12",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "forever": "^0.15.3",
+    "jsonwebtoken": "^7.1.9",
+    "jwk-to-pem": "^1.2.6",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.10.2",
+    "q": "^1.4.1"
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.4",
+    "webpack": "^1.13.3"
+  }
+}
