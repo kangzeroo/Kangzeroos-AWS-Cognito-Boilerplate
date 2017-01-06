@@ -33,6 +33,6 @@ export function setUserToReduxState(user){
 			payload: user
 		})
 		// redirect to route
-		browserHistory.push('/auth/authenticated_page');
+		browserHistory.push('/profile');
 	}
 }

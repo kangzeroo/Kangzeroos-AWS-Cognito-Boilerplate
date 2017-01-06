@@ -198,7 +198,7 @@ export function verifyUserAccount({email, pin}){
 }
 
 // if we want to update the info of our user, we must pass in their unique identifier (email) and an object representing the user info
-export function updateUserInfo(email, editedInfo){
+export function updateUserInfo(editedInfo){
 	console.log(editedInfo)
 	const p = new Promise((res, rej)=>{
 		// we create an array for our attributes that we want to update, and push all `CognitoUserAttribute` objects into it
@@ -233,7 +233,6 @@ export function updateUserInfo(email, editedInfo){
 		            return;
 		        }
 						// we user `setTimeout()` to give AWS some time to update the user properties
-		        setTimeout(()=>{
 							// then we get the latest user attributes
 			        cognitoUser.getUserAttributes(function(err, result) {
 								// reject promise if failed
@@ -245,10 +244,10 @@ export function updateUserInfo(email, editedInfo){
 								// if success, then `buildUserObject()` again and resolve the promise with `userProfileObject`
  				        buildUserObject(cognitoUser)
 				        	.then((userProfileObject)=>{
+										console.log(userProfileObject)
 				        		res(userProfileObject)
 				        	})
 				    	})
-		        }, 500)
 		    });
       }
     });

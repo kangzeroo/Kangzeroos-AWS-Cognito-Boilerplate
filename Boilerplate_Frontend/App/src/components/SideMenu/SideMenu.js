@@ -16,9 +16,12 @@ class SideMenu extends Component {
 				{
 					this.props.authenticated
 					?
-	        <SideOption text='Sign Out' link='/auth/signout' />
+	        <div style={comStyles().loggedIn}>
+		        <SideOption text='Sign Out' link='/auth/signout' />
+						<SideOption text='Profile' link='/profile' />
+					</div>
 					:
-	        <SideOption text='Login' link='/auth/login' />
+					<SideOption text='Login' link='/auth/login' />
 				}
 			</div>
 		)
@@ -65,6 +68,10 @@ const comStyles = (sideMenuVisible) => {
 			zIndex: "99",
 			transition: "0.5s",
 			...paramsCSS
+		},
+		loggedIn: {
+			display: "flex",
+			flexDirection: "column",
 		}
 	}
 }

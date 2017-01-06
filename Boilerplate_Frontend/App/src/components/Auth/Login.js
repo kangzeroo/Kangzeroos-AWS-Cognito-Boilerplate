@@ -48,7 +48,7 @@ class Login extends Component {
 		}).then((userProfileObject)=>{
 			localStorage.setItem('User_Email', this.state.email)
 			this.props.setUser(userProfileObject)
-			browserHistory.push('/auth/authenticated_page')
+			browserHistory.push('/auth/profile')
 		})
 		.catch((err)=>{
 			this.setState({
