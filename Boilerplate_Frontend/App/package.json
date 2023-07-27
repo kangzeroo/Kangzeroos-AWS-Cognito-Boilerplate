@@ -1,9 +1,8 @@
 {
-  "name": "Kangzeroos-ES6-React-Redux-Boilerplate",
+  "name": "kangzeroos-es6-react-redux-boilerplate",
   "version": "1.0.0",
   "description": "React-Redux boilerplate with redux-thunk, redux-logger, react-router, babel, radium and docker support.",
   "main": "index.js",
-  "repository": "",
   "scripts": {
     "start": "nodemon ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "ec2": "PORT=36003 nodemon ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
@@ -40,8 +39,11 @@
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
     "react-router": "^2.8.1",
-    "redux": "^3.0.4",
+    "redux": "^3.7.2",
     "redux-logger": "^2.7.4",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.4.2"
+  },
+  "directories": {
+    "test": "test"
   }
 }

@@ -2,9 +2,9 @@ import { CognitoUserPool } from 'amazon-cognito-identity-js';
 import 'amazon-cognito-js'
 
 
-const REGION = "us-east-1"
-const USER_POOL_ID = 'us-east-1_6i5p2Fwao'
-const CLIENT_ID = '5jr0qvudipsikhk2n1ltcq684b'
+const REGION = "ap-southeast-1"
+const USER_POOL_ID = 'ap-southeast-1_gqEFqOVd0'
+const CLIENT_ID = '33vljgmjrcekmf4bnlgkpbcq2e'
 
 AWS.config.update({
 	region: REGION
@@ -14,7 +14,7 @@ const userData = {
     ClientId : CLIENT_ID
 }
 
-export const BUCKET_NAME = 'kangzeroo-complete-aws-tutorial-pics'
+export const BUCKET_NAME = 'hebcognito'
 export const userPool = new CognitoUserPool(userData);
 export const USERPOOL_ID = 'cognito-idp.'+REGION+'.amazonaws.com/'+USER_POOL_ID
-export const IDENTITY_POOL_ID = 'us-east-1:65bd1e7d-546c-4f8c-b1bc-9e3e571cfaa7'
+export const IDENTITY_POOL_ID = 'ap-southeast-1:8b47cabb-93b8-48bd-9b5e-2fad203253c3'
