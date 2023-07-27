@@ -13,7 +13,7 @@ class SignUp extends Component {
 		super()
 		this.state = {
 			email: "",
-			agentName: "",
+			name: "",
 			password: "",
 			confirmPassword: "",
 			errorMessage: null,
@@ -39,8 +39,8 @@ class SignUp extends Component {
 	}
 
 	signup(){
-		// check that we have the mandatory attributes of `agentName`, `email` and `password`
-		if(this.state.agentName && this.state.email && this.state.password){
+		// check that we have the mandatory attributes of `name`, `email` and `password`
+		if(this.state.name && this.state.email && this.state.password){
 			// check that the password and password confirmation match
 			if(this.state.password == this.state.passwordConfirm){
 				// if all checks pass, then toggle the loading icon as we run a syncronous piece of code
@@ -68,7 +68,7 @@ class SignUp extends Component {
 			}
 		}else{
 			this.setState({
-				errorMessage: "Please include an agent name, email address and password."
+				errorMessage: "Please include an name, email address and password."
 			})
 		}
 	}
@@ -85,8 +85,8 @@ class SignUp extends Component {
 					<h1 style={comStyles().userText}>User Sign Up</h1>
 					<form style={comStyles().form}>
 						<div className='form-group'>
-							<label style={comStyles().formText}>Agent Name:</label>
-							<input value={this.state.agentName} onChange={this.handleChange.bind(this, "agentName")} type="text" className='form-control' style={comStyles().formInput} />
+							<label style={comStyles().formText}>Name:</label>
+							<input value={this.state.name} onChange={this.handleChange.bind(this, "name")} type="text" className='form-control' style={comStyles().formInput} />
 						</div>
 						<div className='form-group'>
 							<label style={comStyles().formText}>Email: <span style={comStyles().note}>(Used for login)</span></label>

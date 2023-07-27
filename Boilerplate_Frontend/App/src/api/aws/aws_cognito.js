@@ -11,15 +11,15 @@ import 'amazon-cognito-js'
 
 // we create an array of all attributes, without the `custom:` prefix.
 // This will be used for building the React-Redux object in plain JS, hence no AWS Cognito related name requirements
-const landlordAttrs = ["email", "agentName", "id"]
+const landlordAttrs = ["email", "name", "id"]
 // we create an array of all our desired attributes for changing, and we loop through this array to access the key name.
 // This will be used for AWS Cognito related name requirements
-const attrs = ["custom:agentName"]
+const attrs = ["name"]
 
 
 
 // sign up user with the 3 paramesters we require (AWS itself only requires 2: email and password)
-export function signUpUser({email, agentName, password}){
+export function signUpUser({email, name, password}){
 	// instantiate a promise so we can work with this async easily
 	const p = new Promise((res, rej)=>{
 		// create an array of attributes that we want
@@ -29,15 +29,15 @@ export function signUpUser({email, agentName, password}){
 		    Name : 'email',
 		    Value : email
 		}
-		const dataAgentName = {
-		    Name : 'custom:agentName',
-		    Value : agentName
+		const dataName = {
+		    Name : 'name',
+		    Value : name
 		}
 		// take each attribute object and turn it into a CognitoUserAttribute object
 		const attributeEmail = new CognitoUserAttribute(dataEmail)
-		const attributeAgentName = new CognitoUserAttribute(dataAgentName)
+		const attributeName = new CognitoUserAttribute(dataName)
 		// add each CognitoUserAttribute to the attributeList array
-		attributeList.push(attributeEmail, attributeAgentName)
+		attributeList.push(attributeEmail, attributeName)
 		// call the signUp method of our userPool, passing in email+password as the first 2 args (the two that AWS requires)
 		// and as the 3rd arg pass in the attributeList array, followed by `null` as the 4th arg
 		// finally as the 5th (last) arg, pass in the callback function that has the error or result from AWS

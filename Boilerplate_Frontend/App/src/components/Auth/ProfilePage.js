@@ -14,7 +14,7 @@ class ProfilePage extends Component {
       this.state = {
         loading: false,
         profile: {
-          "custom:agentName": ""
+          "name": ""
         },
         backEndMessage: ""
       }
@@ -29,7 +29,7 @@ class ProfilePage extends Component {
 
     componentDidMount(){
       this.state.profile = {
-        "custom:agentName": this.props.user.agentName
+        "name": this.props.user.name
       }
     }
 
@@ -77,12 +77,12 @@ class ProfilePage extends Component {
 		return (
 			<div style={comStyles().mainview}>
         <h6>{this.state.backEndMessage}</h6>
-        <h2>Hello {this.props.user ? this.props.user.agentName : ""}</h2>
+        <h2>Hello {this.props.user ? this.props.user.name : ""}</h2>
 				<p>Congrats on making it here! Only verified and logged in users can see this :)</p>
 
         <div className='form-group' style={comStyles().form}>
           {/* Field name determines the name of the variables being passed to handleSubmit(this.props.signinLandlord) */}
-          <input value={this.state.profile["custom:agentName"]} placeholder="Set Agent Name" onChange={this.handleProfileChange.bind(this, 'custom:agentName')} type="text" className='form-control' style={comStyles().formInput} />
+          <input value={this.state.profile["name"]} placeholder="Set Name" onChange={this.handleProfileChange.bind(this, 'name')} type="text" className='form-control' style={comStyles().formInput} />
           <button className='btn btn-success btn-block' onClick={this.saveProfile.bind(this)}>Update Profile</button>
           <button onClick={this.signOut.bind(this)} className='btn btn-danger btn-block'>Sign Out</button>
         </div>
